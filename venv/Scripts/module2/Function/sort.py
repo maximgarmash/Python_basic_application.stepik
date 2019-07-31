@@ -1,3 +1,5 @@
+import operator as op
+from functools import partial
 x = [
     ("Guido", "van", "Rossum" ),
     ("Haskell", "Curry"),
@@ -17,3 +19,26 @@ x = [
 
 x.sort(key=lambda name: len(" ".join(name)))
 print(x)
+
+x.sort(key=op.itemgetter(-1))
+print(x)
+
+f = op.attrgetter("sort")
+x = [2, 6, 1]
+f(x)()
+print(x)
+
+x = [
+    ("Guido", "van", "Rossum" ),
+    ("Haskell", "Curry"),
+    ("John", "Backus")
+]
+
+sort_by_last = partial(list.sort, key = op.itemgetter(-1))
+print(x)
+sort_by_last(x)
+print(x)
+
+y = ["abc", "cba", "abb"]
+sort_by_last(y)
+print(y)
