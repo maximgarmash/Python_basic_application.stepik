@@ -1,14 +1,14 @@
 # print("abc" in "abcba")
 # print("abce" in "abcba")
 
-# print("cabcd".find("abc", 1))  # индекс первого вхождения или -1
+# print("cabcd".find("abc"))  # индекс первого вхождения или -1
 # print("cabcd"[1:].find("abc"))
-# print(str.find.__doc__)
-
+# # print(str.find.__doc__)
+#
 # print("cabcd".index("abc"))  # индекс первого вхождения или ValueError
-# print("cabcd".index("aec"))
+# # print("cabcd".index("aec"))
 
-# s = "The whale in black fled across the desert, and the gunslinger followed"
+# s = "The dog in black fled across the desert, and the gunslinger followed"
 # print(s.startswith(("The woman", "The dog", "The man in black")))
 # print(s.startswith.__doc__)
 
@@ -17,7 +17,11 @@
 
 # s = "abacaba"
 # print(s.count("aba"))
+# s = "ababa"
+# print(s.count("aba"))
 # print(s.count.__doc__)
+
+# s = "abacaba"
 # print(s.find("aba"))
 # print(s.rfind("aba"))
 
@@ -37,12 +41,12 @@
 # print(s.split.__doc__)
 
 # s = "_*__1, 2, 3, 4__*_"
-# print(repr(s.rstrip("*_")))
+# print(repr(s.rstrip("_*")))
 # print(repr(s.lstrip("*_")))
 # print(repr(s.strip("*_")))
 
 # numbers = map(str, [1, 2, 3, 4, 5])
-# print(repr(" ".join(numbers)))
+# print(repr(", ".join(numbers)))
 
 
 # capital = 'London is the capital of Great Britain'
@@ -61,12 +65,13 @@
 # template = "Response from {0.url} with code {0.status_code}"
 #
 # res = requests.get("https://docs.python.org/3.5/")
+# print(res)
 # print(template.format(res))
 #
 # res = requests.get("https://docs.python.org/3.5/random")
 # print(template.format(res))
 
-# from random import random
-# x = random()
-# print(x)
-# print("{:.3}".format(x))
+from random import random
+x = random()
+print(x)
+print("{:.3}".format(x))
