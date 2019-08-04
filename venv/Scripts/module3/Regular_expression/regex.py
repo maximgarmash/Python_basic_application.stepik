@@ -5,6 +5,14 @@ import re
 # print(re.findall)
 # print(re.sub)
 
+# pattern = r"a[abc]c"
+# string = "aac"
+# match_object = re.match(pattern, string)
+# print(match_object)
+
+# match_object = re.search(pattern, string)
+# print(match_object)
+
 # [] -- можно указать множество подходящих символов
 # . ^ $ * + ? { } [ ] \ | ( ) -- метасимволы
 # \d ~ [0-9] -- цифры
@@ -14,14 +22,14 @@ import re
 # \w ~ [a-zA-Z0-9_] -- буквы + цифры + _
 # \W ~ [^a-zA-Z0-9_]
 
-pattern = r"a.c"
-string = "acc"
-match_object = re.match(pattern, string)
-print(match_object)
-
-string = "abc, a.c, aac, a-c, aBc, azc"
+pattern = r"a[abc]c"
+string = "abc, acc, aac"
 all_inclusions = re.findall(pattern, string)
 print(all_inclusions)
-
+#
+# string = "abc, a.c, aac, a-c, aBc, azc"
+# all_inclusions = re.findall(pattern, string)
+# print(all_inclusions)
+#
 fixed_typos = re.sub(pattern, "abc", string)
 print(fixed_typos)
