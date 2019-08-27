@@ -2,5 +2,6 @@ import re
 import sys
 for line in sys.stdin:
     line = line.strip()
-    if re.search(r"\b(\w+)\1\b", line):
-        print(line)
+    # if re.search(r"human", line):
+    #     print(re.sub(r"human", "computer", line))
+    print(re.sub(r"human", "computer", line))
