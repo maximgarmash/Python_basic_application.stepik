@@ -1,8 +1,6 @@
 import requests
 import re
 
-# urlA = "https://stepic.org/media/attachments/lesson/24472/sample1.html"
-# urlB = "https://stepic.org/media/attachments/lesson/24472/sample2.html"
 urlA = str(input())
 urlB = str(input())
 answer = "No"
