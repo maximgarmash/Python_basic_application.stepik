@@ -1,6 +1,6 @@
 import requests
 import re
-# link_pattern = re.compile(r'''<a[^>]*?href=["'](.*?)["'][^>]*?>''')
+
 link_pattern = re.compile(r'''<a[^>]*?href=["'](.*?)[?"'][^>]*?>''')
 site_pattern = re.compile(r'(\S+://)?([^/:]+)[/:]?')
 site_set = set()
@@ -13,7 +13,6 @@ for url in link_pattern.findall(file_text):
     if site.group(2) != '..':
         site_set.add(site.group(2))
 
-for i in sorted(site_set):
-    print(i)
+print("\n".join(sorted(site_set)))
 
 
