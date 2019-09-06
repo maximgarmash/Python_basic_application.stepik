@@ -1,1 +1,1 @@
-<a href="https://stepic.org/media/attachments/lesson/24472/sample1.html">1</a>
+<li><a href="http://www.cnews.ru/cgi-bin/redirect.cgi?http://corp.cnews.ru/">Интеграция</a></li>
