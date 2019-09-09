@@ -5,11 +5,14 @@ headers = {"X-Xapp-Token" : 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6Ii
 # инициируем запрос с заголовком
 
 input_file = "input2.txt"
-with open(input_file) as in_f, open("output2.txt", "w") as out_f:
+with open(input_file) as in_f, open("output2.txt", "w", encoding='UTF-8') as out_f:
+    for artist_id in in_f.readlines():
+        res = requests.get("https://api.artsy.net/api/artists/"+artist_id.rstrip(), headers=headers)
+        data = json.loads(res.text)
+        out_f.write(data['sortable_name'] + ' ' + data['birthday'] + '\n')
 
-    r = requests.get("https://api.artsy.net/api/artists/", headers=headers)
 
 # разбираем ответ сервера
-j = json.loads(r.text)
-print(j['sortable_name'], j['birthday'])
+# j = json.loads(r.text)
+# print(j['sortable_name'], j['birthday'])
 
