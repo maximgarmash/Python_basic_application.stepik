@@ -1,26 +1,26 @@
 from xml.etree import ElementTree
 
-wealth_red, wealth_green, wealth_blue = 0, 0, 0
-level = 2
+def wealth_cube(tree, level, wealth_dict):
+    for child in tree:
+        if child.attrib['color'] == 'red':
+            wealth_dict['red'] += level
+        elif child.attrib['color'] == 'green':
+            wealth_dict['green'] += level
+        else:
+            wealth_dict['blue'] += level
+        wealth_cube(child, level+1, wealth_dict)
+    return wealth_dict
+
+wealth_dict = {'red': 0, 'green': 0, 'blue': 0}
 
 tree = ElementTree.fromstring(input())
-# print(tree.tag, tree.attrib)
-# print(type(tree.tag))
 
-for element in tree.tag:
-    if element.attrib['color'] == 'red':
-        wealth_red += 1
-    elif element.attrib['color'] == 'green':
-        wealth_green += 1
-    else:
-        wealth_blue += 1
-#
-# for child in tree:
-#     if child.attrib['color'] == 'red':
-#         wealth_red += level
-#     elif child.attrib['color'] == 'green':
-#         wealth_green += level
-#     else:
-#         wealth_blue += level
+if tree.attrib['color'] == 'red':
+    wealth_dict['red'] += 1
+elif tree.attrib['color'] == 'green':
+    wealth_dict['green'] += 1
+else:
+    wealth_dict['blue'] += 1
 
-print(wealth_red, wealth_green, wealth_blue)
+answer = wealth_cube(tree, 2, wealth_dict)
+print(answer['red'], answer['green'], answer['blue'])
