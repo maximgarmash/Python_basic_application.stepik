@@ -13,11 +13,11 @@
 
 alphabet = " abcdefghijklmnopqrstuvwxyz"
 shift = int(input())
-string = str(input())
+string = str(input().strip())
 cipher_str = ''
 for character in string:
     if alphabet.index(character)+shift > len(alphabet) - 1:
-        cipher_str += alphabet[abs(alphabet.index(character)+shift-(len(alphabet)-1))]
+        cipher_str += alphabet[alphabet.index(character)+shift-len(alphabet)]
     # elif alphabet.index(character)+shift < 0:
     #     cipher_str += alphabet[alphabet.index(character)+shift-(len(alphabet)-1)]
     else:
