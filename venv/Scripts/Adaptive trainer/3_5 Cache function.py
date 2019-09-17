@@ -1,15 +1,11 @@
+from functools import lru_cache
+
+@lru_cache(maxsize=None)
 def f(x):
     return x * 2 + 1
 
-res = {}
-ans = []
 n = int(input())
-for x in range(n):
-    i = int(input())
-    if i not in res:
-        res[i] = f(i)
-        ans.append(str(res[i]))
-    else:
-        ans.append(str(res[i]))
+res = [str(f(int(input()))) for i in range(n)]
+print("\n".join(res))
 
-print("\n".join(ans))
+print(f.cache_info())
