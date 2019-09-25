@@ -3,11 +3,21 @@
 а чётные нацело делит на два. Функция не должна ничего возвращать, требуется только изменение переданного списка,
 """
 
+
+# def modify_list(lst):
+#     i = 0
+#     while i < len(lst):
+#         if lst[i] % 2 == 0:
+#             lst[i] = int(lst[i] / 2)
+#             i += 1
+#         else:
+#             lst.remove(lst[i])
+
 def modify_list(lst):
-    for dig in lst:
-        if dig%2 == 0:
-            lst[lst.index(dig)] = dig/2
-        else:
-            lst.
+    lst = [int(n/2) for n in lst]
 
 
+
+lst = [1, 2, 4]
+modify_list(lst)
+print(lst)
