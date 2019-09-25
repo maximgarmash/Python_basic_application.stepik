@@ -14,10 +14,9 @@
 #             lst.remove(lst[i])
 
 def modify_list(lst):
-    lst = [int(n/2) for n in lst]
+    lst[:] = [int(n / 2) for n in lst if n % 2 == 0]
 
 
-
-lst = [1, 2, 4]
+lst = [4, 3, 5, 8, 11, 18]
 modify_list(lst)
 print(lst)
