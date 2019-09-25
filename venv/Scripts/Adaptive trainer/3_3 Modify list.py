@@ -17,7 +17,7 @@ def modify_list(lst):
     lst[:] = [int(n / 2) for n in lst if n % 2 == 0]
 
 
-lst = [2, 3, 5, 8, 11, 18]
+lst = [2, 3, 14, 8, 11, 18]
 modify_list(lst)
 print(lst)
 
