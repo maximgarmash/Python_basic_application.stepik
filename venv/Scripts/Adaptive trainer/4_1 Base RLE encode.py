@@ -35,5 +35,13 @@ Sample Output 2:
 a"""
 
 import re
-pattern = repr(input())
+string = repr(input())
+pattern = r"([a-zA-Z])\1+"
+all_inclusions = re.findall(pattern, string)
+match = re.search(pattern, string)
+# print(str(len(match.group(0)))+match.group(1))
+print(all_inclusions)
+print(len(inclusion)+inclusion[1] for inclusion in all_inclusions)
+
+
 
