@@ -5,4 +5,6 @@
 .idea
 misc.xml
 /.idea/
-/Scripts/
+/Scripts/chardetect.exe
+/Scripts/pep8.exe
+/Scripts/pycodestyle.exe
