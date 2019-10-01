@@ -27,14 +27,21 @@ aaabccccCCaB
 Sample Output 1:
 
 3ab4c2CaB
-"""
+Sample Input 2:
+
+a
+Sample Output 2:
+
+a"""
 
 import re
 string = repr(input())
-pattern = r"([a-zA-Z])(\1+)"
-encode_string = string
-for inclusions in re.findall(pattern, string):
-    encode_string = re.sub(pattern, str(len(inclusions[1])+1)+inclusions[0], encode_string, count=1)
-print(encode_string)
-print(string)
+pattern = r"([a-zA-Z])\1+"
+all_inclusions = re.findall(pattern, string)
+match = re.search(pattern, string)
+# print(str(len(match.group(0)))+match.group(1))
+print(all_inclusions)
+print(len(inclusion)+inclusion[1] for inclusion in all_inclusions)
+
+
 
