@@ -13,10 +13,13 @@
 
 Sample Input:
 
-4 8 0 3 4 2 0 3
+6 6 6 7 9 9 0 5 5
 Sample Output:
 
 0 3 4
 
 """
-input()
+lst_dig = input().split()
+for dig in set(lst_dig):
+    if lst_dig.count(dig) > 1:
+        print(dig, end=" ")
