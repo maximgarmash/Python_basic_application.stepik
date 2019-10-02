@@ -19,7 +19,32 @@ Sample Output:
 0 3 4
 
 """
-lst_dig = input().split()
-for dig in set(lst_dig):
-    if lst_dig.count(dig) > 1:
-        print(dig, end=" ")
+# Solution 1
+
+# lst_dig = input().split()
+# for dig in set(lst_dig):
+#     if lst_dig.count(dig) > 1:
+#         print(dig, end=" ")
+
+# Solution 2
+
+from collections import Counter
+
+cntr = Counter(input().split())
+for dig in cntr:
+    if cntr[dig] > 1:
+        print(dig, end=' ')
+
+# Solution 3
+#
+# lst_dig = input().split()
+# lst_dig.sort()
+# i = 0
+# while i <= len(lst_dig) - 1:
+#     if lst_dig.count(lst_dig[i]) > 1:
+#         print(lst_dig[i], end=' ')
+#         i += lst_dig.count(lst_dig[i])
+#     else:
+#         i += 1
+
+
