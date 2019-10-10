@@ -39,3 +39,5 @@ Error
 """
 
 card_value = {'6': 0, '7': 1, '8': 2, '9': 3, '10': 4, 'J': 5, 'Q': 6, 'K': 7, 'A': 8}
+cards = {card[0]: card[1] for card in input().split()}
+print(cards)
