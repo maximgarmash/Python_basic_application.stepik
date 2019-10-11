@@ -41,13 +41,13 @@ Error
 card_value = {'6': 0, '7': 1, '8': 2, '9': 3, '10': 4, 'J': 5, 'Q': 6, 'K': 7, 'A': 8}
 cards = [card for card in input().split()]
 trump = input()
-if cards[0][1] == cards[1][1]:
-    if card_value[cards[0][0]] > card_value[cards[1][0]]:
+if cards[0][-1] == cards[1][-1]:
+    if card_value[cards[0][0:-1]] > card_value[cards[1][0:-1]]:
         print('First')
     else:
         print('Second')
-elif cards[0][1] == trump or cards[1][1] == trump:
-    if cards[0][1] == trump:
+elif cards[0][-1] == trump or cards[1][-1] == trump:
+    if cards[0][-1] == trump:
         print('First')
     else:
         print('Second')
