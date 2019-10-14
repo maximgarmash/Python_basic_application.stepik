@@ -31,3 +31,11 @@ Sample Output:
 aaabccccCCaB
 
 """
+str_code = str(input())
+str_decode = ''
+index = 0
+
+while index < len(str_code):
+    if int(index):
+        str_decode += index*str_code[index + 1]
+
