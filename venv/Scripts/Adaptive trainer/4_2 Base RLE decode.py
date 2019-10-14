@@ -33,16 +33,16 @@ aaabccccCCaB
 """
 str_code = str(input())
 str_decode = ''
-index = 0
+index, i, num = 0, 1, 1
 
 while index < len(str_code):
     try:
-
-        str_decode += int(str_code[index])*str_code[index + 1]
-        index += 2
-    else:
-        str_decode += str_code[index]
-        index += 1
+        while True:
+            num = int(str_code[index: index + i])
+            i += 1
+    except ValueError:
+        str_decode += num * str_code[index + i-1]
+        index += i
+        num, i = 1, 1
 print(str_decode)
-
 
