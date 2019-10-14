@@ -36,6 +36,13 @@ str_decode = ''
 index = 0
 
 while index < len(str_code):
-    if int(index):
-        str_decode += index*str_code[index + 1]
+    try:
+
+        str_decode += int(str_code[index])*str_code[index + 1]
+        index += 2
+    else:
+        str_decode += str_code[index]
+        index += 1
+print(str_decode)
+
 
