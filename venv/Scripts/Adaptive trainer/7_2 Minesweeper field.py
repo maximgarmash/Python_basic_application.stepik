@@ -30,3 +30,11 @@ Sample Output:
 23*1
 0111
 """
+
+n, m = map(int, input().split())
+# print(n + m)
+mines_field = [input().split() for i in range(n)]
+print(mines_field)
+
+for row in mines_field:
+    for cell in row:
